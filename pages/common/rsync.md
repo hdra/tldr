@@ -30,3 +30,11 @@
 - Transfer file over SSH and show global progress:
 
 `rsync -e ssh --info=progress2 {{remote_host_name}}:{{remote_file}} {{local_file}}`
+
+- Keep partially transferred files to allow for resumes:
+
+`rsync --partial {{remote_host_name}}:{{remote_file}} {{local_file}}`
+
+- Apply bandwidth limit to file tranfers:
+
+`rsync --bwlimit={{limit_in_kbytes_per_second}} {{remote_host_name}}:{{remote_file}} {{local_file}}`
